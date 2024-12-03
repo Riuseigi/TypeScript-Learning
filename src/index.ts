@@ -62,3 +62,30 @@ person.name = "bowser";
 person.score = 30;
 
 const score = person.score;
+
+function addTwoNumbers(a: number, b: number): number {
+  return a + b;
+}
+
+const subractTwoNumber = (a: number, b: number): number => {
+  return a - b;
+};
+// addTwoNumbers("a", "b");
+
+function addAllNumber(items: number[]): Number {
+  const total = items.reduce((a, b) => a + b, 0);
+  // console.log(total);
+
+  return total;
+}
+addTwoNumbers(3, 5);
+
+addAllNumber([5, 6, 7, 8, 9]);
+
+function formatGreeting(name: string, greeting: string) {
+  return `${greeting}, ${name}`;
+}
+
+const result = formatGreeting("Mario", "Mama mia");
+
+console.log(result);
