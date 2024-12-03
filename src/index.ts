@@ -89,3 +89,30 @@ function formatGreeting(name: string, greeting: string) {
 const result = formatGreeting("Mario", "Mama mia");
 
 console.log(result);
+
+//any type
+
+let aged: any;
+let title;
+
+aged = 35;
+aged = false;
+
+title = {
+  hello: "world",
+};
+
+//any type in Array
+
+let somethings: any[] = [12, "asdasdasd", true, null];
+
+somethings.push({ id: 123 });
+
+//Functions in Array
+
+function addTogether(value: any): any {
+  return value + value;
+}
+
+const resultOne = addTogether("hello");
+const resultTwo = addTogether(3);
