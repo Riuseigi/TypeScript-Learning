@@ -78,3 +78,18 @@ function addTogether(value) {
 }
 const resultOne = addTogether("hello");
 const resultTwo = addTogether(3);
+//tuples
+let persons = ["mario", 35, true];
+//tuples example
+let hsla;
+hsla = [200, "100%", "50%", 34];
+function useCoords() {
+    const lat = 100;
+    const long = 50;
+    return [lat, long];
+}
+const [lat, long] = useCoords();
+//named tuples
+let users;
+users = ["Luigi", 34];
+console.log(users[0]);
