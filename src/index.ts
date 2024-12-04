@@ -141,3 +141,52 @@ let users: [name: string, age: number];
 users = ["Luigi", 34];
 
 console.log(users[0]);
+
+//interfaces
+
+interface Author {
+  name: string;
+  avatar: string;
+}
+
+const authorOne: Author = {
+  name: "mario",
+  avatar: "mario.png",
+};
+
+interface Post {
+  title: string;
+  body: string;
+  tags: string[];
+  create_at: Date;
+  author: Author;
+}
+
+const newPost: Post = {
+  title: " Legend of Zelda",
+  body: "Link saves Zelda",
+  tags: ["gaming", "fantasy", "Hero"],
+  create_at: new Date("10-24-2024"),
+  author: authorOne,
+};
+
+// interface as function argument types
+function createPost(post: Post): void {
+  console.log(`Created post ${post.title} by ${post.author.name}`);
+}
+
+createPost(newPost);
+
+//interfaces with arrays
+
+let posts: Post[] = [];
+
+posts.push({
+  title: "Xenoblade",
+  body: "Sci-fi Story",
+  tags: ["Sci-fi", "Romance", "RPG"],
+  create_at: new Date("10-24-2024"),
+  author: { name: "Rex", avatar: "rex.png" },
+});
+
+console.log(posts[0]);

@@ -93,3 +93,29 @@ const [lat, long] = useCoords();
 let users;
 users = ["Luigi", 34];
 console.log(users[0]);
+const authorOne = {
+    name: "mario",
+    avatar: "mario.png",
+};
+const newPost = {
+    title: " Legend of Zelda",
+    body: "Link saves Zelda",
+    tags: ["gaming", "fantasy", "Hero"],
+    create_at: new Date("10-24-2024"),
+    author: authorOne,
+};
+// interface as function argument types
+function createPost(post) {
+    console.log(`Created post ${post.title} by ${post.author.name}`);
+}
+createPost(newPost);
+//interfaces with arrays
+let posts = [];
+posts.push({
+    title: "Xenoblade",
+    body: "Sci-fi Story",
+    tags: ["Sci-fi", "Romance", "RPG"],
+    create_at: new Date("10-24-2024"),
+    author: { name: "Rex", avatar: "rex.png" },
+});
+console.log(posts[0]);
