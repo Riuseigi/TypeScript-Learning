@@ -133,5 +133,23 @@ const userOne = {
 function formatUser(user) {
     console.log(`${user.name} has score of ${user.score}`);
 }
-formatUser(userOne);
-formatUser({ name: "Link", score: 34 });
+// formatUser(userOne);
+// formatUser({ name: "Link", score: 34 });
+// Union types
+let someId;
+someId = 1;
+someId = "2";
+let email = null;
+email = "riammutempest@gmail.com";
+email = null;
+let anotherID;
+anotherID = "123wqdaqw";
+anotherID = 5;
+// Union Type pitfall
+function swapIdType(id) {
+    //can only use props and methods common to
+    //both number and string types
+    // parseInt(id) --> not allowed
+    return id;
+}
+swapIdType("5");
