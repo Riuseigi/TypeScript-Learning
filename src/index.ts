@@ -251,3 +251,45 @@ function swapIdType(id: Id): Id {
 }
 
 swapIdType("5");
+
+//type guards
+
+type Ids = number | string;
+
+function swapId(id: Ids) {
+  if (typeof id === "string") {
+    return parseInt(id);
+  } else {
+    return id.toString();
+  }
+}
+
+const idOne = swapId(1);
+const idTwo = swapId("2");
+
+console.log(idOne, idTwo);
+
+//tagged interfaces
+
+interface Users {
+  type: "user";
+  username: string;
+  email: string;
+  id: Ids;
+}
+
+interface Person {
+  type: "person";
+  firstName: string;
+  age: number;
+  id: Ids;
+}
+
+function logDetails(value: Users | Person): void {
+  if (value.type === "user") {
+    console.log(value.email, value.username);
+  }
+  if (value.type === "person") {
+    console.log(value.firstName, value.age);
+  }
+}
